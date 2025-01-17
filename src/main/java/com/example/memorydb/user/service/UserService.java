@@ -34,4 +34,8 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    public List<UserEntity> filtersScore(int score){
+        return userRepository.findAllScoreGreater(score);
+    }
+
 }

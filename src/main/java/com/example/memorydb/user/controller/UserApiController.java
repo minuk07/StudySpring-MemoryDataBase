@@ -37,4 +37,9 @@ public class UserApiController {
         var response = userService.findById(id);
         return response.get(); //null 값이 리턴될 수 있도록
     }
+
+    @GetMapping("/score/{score}")
+    public List<UserEntity> findOverScore(@PathVariable int score){
+        return userService.filtersScore(score);
+    }
 }
